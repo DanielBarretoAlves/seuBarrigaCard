@@ -19,15 +19,14 @@
 
     <h1>Senhor Barriga Pay</h1>
     <h3>Pague seu aluguel no conforto de seu Lar</h3>
-    <form method="post">
-        <label>Metodo de Pagamento:</label>
+    <form method="POST" action="/test">
+        <!-- <label>Metodo de Pagamento:</label>
         <select id="selection" name="mtdPagamento" id="cars">
             <option value="credito">Cartão de Credito</option>
             <option value="debito">Cartão de Debito</option>
-            <option value="dinheiro">Dinheiro</option>
-        </select>
+        </select> -->
         <label>Valor a Cobrar:</label>
-        <input type="number" />
+        <input class="form-control" placeholder="valor" name="valor" type="number" />
         <input type="submit" />
     </form>
 </body>
