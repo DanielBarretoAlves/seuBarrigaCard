@@ -16,17 +16,18 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/test", methods=["POST"])
+@app.route("/test", methods=["POST", "GET"])
 def dono():
     valor = request.form.get('valor')
-    print(valor)
-    return valor
+    pagamento = request.form.get('mtdPagamento')
+    
+    # "Forma De Pagamento " + pagamento + " Valor a Pagar" + valor 
+    return  redirect('index.html')
     
 
 @app.route('/')
 def show_form():
     # Console.log("teste1")
-    print("teste")
     return render_template('dono.html')
 
 
