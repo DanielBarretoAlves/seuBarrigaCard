@@ -1,0 +1,16 @@
+{
+    "dono": {
+        "carteira": "0",
+        "valAluguel": "700"
+    },
+    "inquilinos": [
+        {
+            "seuMadruga": "Seu Madruga",
+            "carteira": "2000"
+        },
+        {
+            "donaFlorinda": "Dona Florinda",
+            "carteira": "2500"
+        }
+    ]
+}
