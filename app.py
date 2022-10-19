@@ -19,10 +19,12 @@ def home():
 @app.route("/test", methods=["POST", "GET"])
 def dono():
     valor = request.form.get('valor')
+    pagamento = request.form.get('pagamento')
     
     dictionary = {
 
-    "Valor": valor
+    "Valor": valor,
+    "Forma_de_Pagamento": pagamento
     }
 
     json_object = json.dumps(dictionary, indent=4)
@@ -31,7 +33,7 @@ def dono():
         outfile.write(json_object)
 
     # "Forma De Pagamento " + pagamento + " Valor a Pagar" + valor
-    return user_data
+    return render_template('index.html', valor=valor)
 
 
 @app.route('/')
