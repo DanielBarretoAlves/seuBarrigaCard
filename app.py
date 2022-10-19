@@ -19,14 +19,24 @@ def home():
 @app.route("/test", methods=["POST", "GET"])
 def dono():
     valor = request.form.get('valor')
-    pagamento = request.form.get('mtdPagamento')
     
-    # "Forma De Pagamento " + pagamento + " Valor a Pagar" + valor 
-    return  redirect('index.html')
-    
+    dictionary = {
+
+    "Valor": valor
+    }
+
+    json_object = json.dumps(dictionary, indent=4)
+
+    with open("sample.json", "w") as outfile:
+        outfile.write(json_object)
+
+    # "Forma De Pagamento " + pagamento + " Valor a Pagar" + valor
+    return user_data
+
 
 @app.route('/')
 def show_form():
+    print("test")
     # Console.log("teste1")
     return render_template('dono.html')
 
