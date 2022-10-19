@@ -16,20 +16,43 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/test", methods=["POST", "GET"])
+@app.route("/cadCobranca", methods=["POST", "GET"])
 def dono():
     valor = request.form.get('valor')
+    dataVen = request.form.get('dataVen')
+    
+    dictionary = {
+
+    "Valor": valor,
+    "Data do vencimento": dataVen
+    }
+
+    json_object = json.dumps(dictionary, indent=4)
+
+    with open("historicoCobranca.json", "w") as outfile:
+        outfile.write(json_object)
+
+    # "Forma De Pagamento " + pagamento + " Valor a Pagar" + valor
+    return render_template('index.html', valor=valor, dataVen=dataVen)
+
+
+
+@app.route("/cadPag", methods=["POST", "GET"])
+def pag():
+    valor = request.form.get('valor')
+    dataVen = request.form.get('dataVen')
     pagamento = request.form.get('pagamento')
     
     dictionary = {
 
     "Valor": valor,
-    "Forma_de_Pagamento": pagamento
+    "Data do vencimento": dataVen,
+    "Metodo de Pagamento": pagamento
     }
 
     json_object = json.dumps(dictionary, indent=4)
 
-    with open("sample.json", "w") as outfile:
+    with open("historicoPagamento.json", "w") as outfile:
         outfile.write(json_object)
 
     # "Forma De Pagamento " + pagamento + " Valor a Pagar" + valor

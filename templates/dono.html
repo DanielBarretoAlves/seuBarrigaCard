@@ -19,12 +19,10 @@
 
     <h1>Senhor Barriga Pay</h1>
     <h3>Pague seu aluguel no conforto de seu Lar</h3>
-    <form method="POST" action="/test">
-        <label>Metodo de Pagamento:</label>
-        <select id="selection" name="pagamento">
-            <option value="credito">Cartão de Credito</option>
-            <option value="debito">Cartão de Debito</option>
-        </select>
+    <form method="POST" action="/cadCobranca">
+        <label>Data do Vencimento:</label>
+        <input type="date" name="dataVen"/>
+        
         <label>Valor a Cobrar:</label>
         <input class="form-control" placeholder="valor" name="valor" type="number" />
         <input type="submit" />
