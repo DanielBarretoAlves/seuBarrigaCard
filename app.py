@@ -11,11 +11,6 @@ def index():
 app = Flask(__name__)
 
 
-@app.route("/dada", methods=["GET"])
-def home():
-    return render_template('index.html')
-
-
 @app.route("/cadCobranca", methods=["POST", "GET"])
 def dono():
     valor = request.form.get('valor')
@@ -66,9 +61,3 @@ def show_form():
     return render_template('dono.html')
 
 
-# @app.route("/result", methods=['POST'])
-# def show_result():
-#     print("here")
-#     result = request.form
-#     # console.log(result)
-#     return render_template('dono.html', result=result)
